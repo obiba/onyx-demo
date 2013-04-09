@@ -13,5 +13,5 @@ Onyx demo project can be used as a starting point to build your own Onyx project
 8. when done, copy war file from target directory to your favorite servlet container
 
 Requirements are: 
-* Maven 3.x
+* [Maven 3.x](http://maven.apache.org)
 * Java JDK 1.6.x or higher
