@@ -3,7 +3,7 @@ Onyx Demo Project
 
 Onyx demo project can be used as a starting point to build your own Onyx project.
 
-1. Select one of the tag
+1. Select [one of the tag](https://github.com/obiba/onyx-demo/tags)
 2. Download project as a zip file
 3. Unzip
 4. From project base directory, build your onyx web application and launch server: mvn jetty:run-war
