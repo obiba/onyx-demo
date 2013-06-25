@@ -164,11 +164,14 @@
   <repositories>
     <repository>
       <id>obiba.org</id>
-      <url>http://maven.obiba.org/maven2</url>
-    </repository>
-    <repository>
-      <id>snapshots.obiba.org</id>
-      <url>http://maven.obiba.org/maven2-snapshots</url>
+      <name>Obiba Maven 2.x Repository</name>
+      <url>http://repo.obiba.org/repo</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </repository>
   </repositories>
 
