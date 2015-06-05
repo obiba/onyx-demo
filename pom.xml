@@ -77,7 +77,7 @@
     </dependency>
 
     <dependency>
-      <groupId>org.obiba</groupId>
+      <groupId>org.obiba.commons</groupId>
       <artifactId>obiba-security</artifactId>
     </dependency>
 
