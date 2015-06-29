@@ -7,6 +7,7 @@
     <property name="datasourceName" value="medications" />
     <property name="tableName" value="Drugs" />
     <property name="entityType" value="Drug" />
+    <property name="withCaching" value="true"/>
   </bean>
 
 </beans>
