@@ -1,0 +1,22 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" updateCheck="false">
+
+  <diskStore path="/tmp/onyx-demo"/>
+
+  <defaultCache
+      maxElementsInMemory="10000"
+      eternal="false"
+      timeToIdleSeconds="120"
+      timeToLiveSeconds="120"
+      overflowToDisk="true"
+      diskPersistent="false"/>
+
+  <cache name="datasource-medications"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToLiveSeconds="0"
+        timeToIdleSeconds="0"
+        overflowToDisk="true"
+        diskPersistent="true"/>
+
+</ehcache>
