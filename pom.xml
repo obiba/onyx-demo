@@ -12,8 +12,16 @@
   <parent>
     <groupId>org.obiba.onyx</groupId>
     <artifactId>onyx-deploy-parent</artifactId>
-    <version>1.10-SNAPSHOT</version>
+    <version>1.10.0</version>
   </parent>
+
+  <properties>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+
+    <onyx-instruments.version>1.10-SNAPSHOT</onyx-instruments.version>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -49,7 +57,7 @@
     <dependency>
       <groupId>org.obiba.jade.instrument</groupId>
       <artifactId>interface-bioimpedance-tanita-tbf310</artifactId>
-      <version>${project.version}</version>
+      <version>${onyx-instruments.version}</version>
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
@@ -57,7 +65,7 @@
     <dependency>
       <groupId>org.obiba.jade.instrument</groupId>
       <artifactId>interface-spirometry</artifactId>
-      <version>${project.version}</version>
+      <version>${onyx-instruments.version}</version>
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
