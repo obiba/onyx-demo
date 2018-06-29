@@ -12,7 +12,7 @@
   <parent>
     <groupId>org.obiba.onyx</groupId>
     <artifactId>onyx-deploy-parent</artifactId>
-    <version>1.11.0</version>
+    <version>1.12-SNAPSHOT</version>
   </parent>
 
   <properties>
@@ -20,42 +20,42 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 
-    <onyx-instruments.version>1.11.0</onyx-instruments.version>
+    <onyx-instruments.version>1.12-SNAPSHOT</onyx-instruments.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>org.obiba.jade</groupId>
-      <artifactId>jade-core</artifactId>
+      <groupId>org.obiba.onyx</groupId>
+      <artifactId>onyx-jade-core</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.obiba.jade</groupId>
-      <artifactId>jade-remote-server</artifactId>
+      <groupId>org.obiba.onyx</groupId>
+      <artifactId>onyx-jade-remote-server</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.obiba.quartz</groupId>
-      <artifactId>quartz-core</artifactId>
+      <groupId>org.obiba.onyx</groupId>
+      <artifactId>onyx-quartz-core</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.obiba.marble</groupId>
-      <artifactId>marble-core</artifactId>
+      <groupId>org.obiba.onyx</groupId>
+      <artifactId>onyx-marble-core</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.obiba.ruby</groupId>
-      <artifactId>ruby-core</artifactId>
+      <groupId>org.obiba.onyx</groupId>
+      <artifactId>onyx-ruby-core</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.obiba.jade.instrument</groupId>
+      <groupId>org.obiba.onyx</groupId>
       <artifactId>interface-bioimpedance-tanita-tbf310</artifactId>
       <version>${onyx-instruments.version}</version>
       <type>zip</type>
@@ -63,16 +63,16 @@
     </dependency>
 
     <dependency>
-      <groupId>org.obiba.jade.instrument</groupId>
-      <artifactId>interface-spirometry</artifactId>
+      <groupId>org.obiba.onyx</groupId>
+      <artifactId>interface-spirometry-ndd-easyonpc</artifactId>
       <version>${onyx-instruments.version}</version>
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.obiba.jade.instrument</groupId>
-      <artifactId>instrument-bootstrap</artifactId>
+      <groupId>org.obiba.onyx</groupId>
+      <artifactId>onyx-instrument-bootstrap</artifactId>
       <version>${project.version}</version>
       <type>zip</type>
       <scope>provided</scope>
@@ -107,15 +107,15 @@
             <configuration>
               <artifactItems>
                 <artifactItem>
-                  <groupId>org.obiba.jade.instrument</groupId>
-                  <artifactId>instrument-bootstrap</artifactId>
+                  <groupId>org.obiba.onyx</groupId>
+                  <artifactId>onyx-instrument-bootstrap</artifactId>
                   <type>zip</type>
                   <outputDirectory>
                     ${project.build.directory}/${project.build.finalName}/instruments/bootstrap
                   </outputDirectory>
                 </artifactItem>
                 <artifactItem>
-                  <groupId>org.obiba.jade.instrument</groupId>
+                  <groupId>org.obiba.onyx</groupId>
                   <artifactId>interface-bioimpedance-tanita-tbf310</artifactId>
                   <type>zip</type>
                   <outputDirectory>
@@ -123,8 +123,8 @@
                   </outputDirectory>
                 </artifactItem>
                 <artifactItem>
-                  <groupId>org.obiba.jade.instrument</groupId>
-                  <artifactId>interface-spirometry</artifactId>
+                  <groupId>org.obiba.onyx</groupId>
+                  <artifactId>interface-spirometry-ndd-easyonpc</artifactId>
                   <type>zip</type>
                   <outputDirectory>
                     ${project.build.directory}/${project.build.finalName}/instruments/Spirometry
@@ -171,16 +171,34 @@
 
   <repositories>
     <repository>
-      <id>obiba.org</id>
-      <name>Obiba Maven 2.x Repository</name>
-      <url>http://repo.obiba.org/repo</url>
+      <id>obiba-releases</id>
+      <name>Obiba Maven Releases Repository</name>
+      <url>https://dl.bintray.com/obiba/maven</url>
       <releases>
         <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>obiba-snapshots</id>
+      <name>Obiba Maven Snapshots Repository</name>
+      <url>https://obiba.jfrog.io/obiba/libs-snapshot</url>
+      <releases>
+        <enabled>false</enabled>
       </releases>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
     </repository>
   </repositories>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>obiba-artifactory</id>
+      <url>https://obiba.jfrog.io/obiba/libs-snapshot</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
