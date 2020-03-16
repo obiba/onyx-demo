@@ -148,21 +148,21 @@
 	
     <valueset entityType="Participant" valueTable="QuartzDemoQuestionnaire">
       <entities>
-        <excludeAll />
+<!--         <excludeAll />
         <script type="INCLUDE">
           <javascript><![CDATA[// Include any ValueSet that has 'CLOSED' or 'COMPLETED' as a value for the 'Participant.Interview.Status' variable
           $('Participants:Admin.Interview.status').any('CLOSED','COMPLETED')]]></javascript>
         </script>
         <script type="EXCLUDE">
           <javascript><![CDATA[$('Participants:Admin.Interview.exportLog.destination').any('DCC.QuartzDemoQuestionnaire')]]></javascript>
-        </script>
+        </script> -->
       </entities>
-      <variables>
+<!--       <variables>
 	    <variableAttribute type="EXCLUDE">
           <attribute>exclusiveChoiceCategoryVariable</attribute>
           <value>true</value>
         </variableAttribute> 
-      </variables>		  
+      </variables>		   -->
     </valueset>	
 
     <valueset entityType="Participant" valueTable="ConclusionQuestionnaire">
@@ -309,11 +309,51 @@
 
     <!-- Export in CSV with provided options -->
     <options>
-      <format>CSV</format>
-      <characterSet>ISO-8859-1</characterSet>
+      <format>OPAL</format>
+      <characterSet>UTF-8</characterSet>
       <separator>,</separator>
       <quote>"</quote>
+      <opalDatasource>Instruments</opalDatasource>
     </options>
+
+
+    <valueset entityType="Participant" valueTable="QuartzDemoQuestionnaire">
+      <entities>
+      </entities>
+      <variables>
+        <excludeAll />
+        <variableName type="INCLUDE" prefix="QuestionnaireRun" />
+      </variables>
+    </valueset>
+
+    <valueset entityType="Participant" valueTable="Participants">
+      <entities>
+      </entities>
+      <variables>
+      </variables>
+    </valueset>
+
+    <valueset entityType="Participant" valueTable="Spirometry">
+      <entities>
+      </entities>
+      <variables>
+      </variables>
+    </valueset>
+
+    <valueset entityType="Participant" valueTable="Test">
+      <entities>
+      </entities>CHUM
+      <variables>
+      </variables>
+    </valueset>
+
+
+    <valueset entityType="Instrument" valueTable="Instruments">
+      <entities>
+      </entities>
+      <variables>
+      </variables>
+    </valueset>
 
     <valueset entityType="Participant" valueTable="QuartzDemoQuestionnaire">
       <entities>
@@ -327,12 +367,13 @@
         </script>
       </entities>
       <variables>
-	<variableAttribute type="EXCLUDE">
+	      <!-- <variableAttribute type="EXCLUDE">
           <attribute>exclusiveChoiceCategoryVariable</attribute>
           <value>true</value>
-        </variableAttribute> 
-      </variables>		  
-    </valueset>	
+        </variableAttribute>  -->
+        <!--<variableName type="EXCLUDE" prefix="POSTAL_CODE" />-->
+      </variables>
+    </valueset>
 
   </destination>
 

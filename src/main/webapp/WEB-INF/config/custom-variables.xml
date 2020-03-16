@@ -70,6 +70,20 @@
 	</attributes>
   </variable> 
 	</variables>
-  </valueTable>  
+  </valueTable>
+
+	<valueTable name="Test">
+		<variables>
+			<variable name="InstrumentRun.user2" valueType="text" entityType="Participant">
+				<attributes>
+					<attribute name="label" valueType="text" locale="en"></attribute>
+					<attribute name="label" valueType="text" locale="fr"></attribute>
+					<attribute name="script" valueType="text">
+						$('Instruments.Spirometry:InstrumentRun.userX')
+					</attribute>
+				</attributes>
+			</variable>
+		</variables>
+	</valueTable>
   
 </customVariables>

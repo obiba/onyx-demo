@@ -41,7 +41,7 @@
     </instructions>
     <instrumentType>Impedance310</instrumentType>
     <attribute>
-      <name>20kg</name>
+      <name>10kg</name>
       <type>DECIMAL</type>
       <validators>
         <dataValidator dataType="DECIMAL">
@@ -51,6 +51,18 @@
           </rangeValidator>
         </dataValidator>
       </validators>       
+    </attribute>
+    <attribute>
+      <name>20kg</name>
+      <type>DECIMAL</type>
+      <validators>
+        <dataValidator dataType="DECIMAL">
+          <rangeValidator>
+            <minimum>19</minimum>
+            <maximum>21</maximum>
+          </rangeValidator>
+        </dataValidator>
+      </validators>
     </attribute>
     <attribute>
       <name>40kg</name>
